@@ -1,5 +1,8 @@
 #!/bin/bash -ex
 
+which protoc
+protoc --version
+
 mkdir -p ./generated
 cd EmbeddedProto
 protoc --plugin=protoc-gen-eams=protoc-gen-eams -I../proto --eams_out=../generated ../proto/uart_msg.proto

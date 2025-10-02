@@ -1,0 +1,19 @@
+[project]
+name = "test-em-proto"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12, <3.13"
+dependencies = [
+    "google-api-python-client>=2.184.0",
+    "poethepoet>=0.37.0",
+]
+
+
+[tool.poe.env]
+UV_NO_SYNC = "true"
+
+[tool.poe.tasks]
+protoc-download = """curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v27.1/protoc-27.1-linux-x86_64.zip"""
+protoc-install = "unzip protoc-27.1-linux-x86_64.zip -d .venv/."
+generate = "./generate.sh"

@@ -1,0 +1,5 @@
+desktop/cpp_gen/
+desktop/py_gen/
+*.bin
+*.zip
+generated
