@@ -6,6 +6,7 @@ def main():
     accel.x = 12
     accel.y = 23
     accel.z = 34
+    accel.payload.extend([23, 45])
     msg = accel.SerializeToString()
     print(msg)
     with open('out_py.bin', 'wb') as file:
@@ -15,7 +16,7 @@ def main():
         in_bin = file.read()
 
     accel.ParseFromString(in_bin)
-    print(accel.x, accel.y, accel.z)
+    print(accel)
 
 
 if __name__ == '__main__':
