@@ -4,9 +4,10 @@ which protoc
 protoc --version
 
 mkdir -p ./generated
-cd EmbeddedProto
+pushd EmbeddedProto
+python setup.py
 protoc --plugin=protoc-gen-eams=protoc-gen-eams -I../proto --eams_out=../generated ../proto/uart_msg.proto
-cd -
+popd
 
 # Generate the desktop source code.
 mkdir -p ./desktop/py_gen

@@ -12,8 +12,9 @@ dependencies = [
 
 [tool.poe.env]
 UV_NO_SYNC = "true"
+PROTO_VER = "32.0"
 
 [tool.poe.tasks]
-protoc-download = """curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v27.1/protoc-27.1-linux-x86_64.zip"""
-protoc-install = "unzip protoc-27.1-linux-x86_64.zip -d .venv/."
+protoc-download = """curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v${PROTO_VER}/protoc-${PROTO_VER}-linux-x86_64.zip"""
+protoc-install = "unzip protoc-${PROTO_VER}-linux-x86_64.zip -d .venv/."
 generate = "./generate.sh"
