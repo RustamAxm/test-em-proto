@@ -25,4 +25,9 @@ desktop/
 
 2 directories, 3 files
 ```
+python example 
+```commandline
+export PYTHONPATH=.
+python3 desktop/deser.py
+```
 
